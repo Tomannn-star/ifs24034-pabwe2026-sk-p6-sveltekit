@@ -29,6 +29,13 @@ export interface CourseContent {
   title: string;
   youtube: string;
   status?: number; // 0 or 1
+  learn?: {
+    id?: number;
+    user_id?: number;
+    course_content_id?: number;
+    status: number;
+    [key: string]: any;
+  } | null;
   created_at?: string;
   updated_at?: string;
 }
@@ -43,9 +50,11 @@ export interface Course {
   students?: CourseStudent[];
   total_students?: number;
   ratings?: CourseRating[];
+  rating?: number | null;
   avg_ratings?: number | null;
   total_ratings?: number;
   contents?: CourseContent[];
+  course_contents?: CourseContent[];
   total_contents?: number;
   created_at?: string;
   updated_at?: string;

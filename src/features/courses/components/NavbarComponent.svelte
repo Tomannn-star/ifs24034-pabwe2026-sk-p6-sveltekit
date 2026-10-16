@@ -12,7 +12,7 @@
   const dispatch = createEventDispatcher();
 
   let dropdownOpen: boolean = false;
-  let dropdownRef: HTMLElement;
+  let dropdownRef: HTMLElement | undefined;
 
   function handleClickOutside(event: MouseEvent) {
     if (dropdownRef && !dropdownRef.contains(event.target as Node)) {
@@ -61,11 +61,11 @@
       </button>
 
       <a href="/" on:click|preventDefault={() => goto("/")} class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-cyan-500 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+        <div class="w-10 h-10 rounded-xl bg-linear-to-tr from-indigo-600 to-cyan-500 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform">
           <GraduationCap size={22} strokeWidth={2.5} />
         </div>
         <div>
-          <span class="text-lg font-bold bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-800 bg-clip-text text-transparent">
+          <span class="text-lg font-bold bg-linear-to-r from-slate-900 via-indigo-950 to-slate-800 bg-clip-text text-transparent">
             Delcom Courses
           </span>
         </div>
@@ -87,7 +87,7 @@
             class="w-8 h-8 rounded-full object-cover border border-slate-200"
           />
         {:else}
-          <div class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 text-white flex items-center justify-center font-bold text-xs">
+          <div class="w-8 h-8 rounded-full bg-linear-to-br from-indigo-500 to-purple-600 text-white flex items-center justify-center font-bold text-xs">
             {profile?.name ? profile.name.charAt(0).toUpperCase() : "U"}
           </div>
         {/if}

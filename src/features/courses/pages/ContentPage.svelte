@@ -70,8 +70,9 @@
 </script>
 
 {#if !profile || !content}
-  <div class="flex flex-col items-center justify-center py-20">
+  <div class="flex flex-col items-center justify-center py-20" data-testid="loading-spinner">
     <div class="w-8 h-8 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin"></div>
+    <h1 class="text-sm font-medium text-slate-600 mt-3">Memuat materi pembelajaran...</h1>
   </div>
 {:else}
   <div class="space-y-6 max-w-4xl mx-auto animate-in fade-in duration-300">

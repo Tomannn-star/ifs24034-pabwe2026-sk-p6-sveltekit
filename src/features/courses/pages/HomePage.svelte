@@ -309,5 +309,10 @@
     on:close={() => (showChangeModal = false)}
     onClose={() => (showChangeModal = false)}
   />
+{:else}
+  <div class="py-20 flex flex-col items-center justify-center gap-3">
+    <LoaderCircle size={32} class="animate-spin text-indigo-600" />
+    <h1 class="text-sm font-medium text-slate-600">Memuat daftar kursus...</h1>
+  </div>
 {/if}
 

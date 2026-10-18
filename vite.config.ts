@@ -25,6 +25,7 @@ export default defineConfig(({ mode }) => {
     plugins: [
       sveltekit({
         adapter: selectedAdapter,
+        inlineStyleThreshold: Infinity,
       }),
       tailwindcss(),
       svelteTesting(),

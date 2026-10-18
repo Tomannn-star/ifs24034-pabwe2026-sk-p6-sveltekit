@@ -72,7 +72,7 @@
   >
     <div class="p-4 space-y-6">
       <div>
-        <p class="px-3 text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+        <p class="px-3 text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">
           Menu Utama
         </p>
         <nav class="space-y-1">
@@ -90,7 +90,7 @@
                 <svelte:component
                   this={item.icon}
                   size={19}
-                  class={active ? "text-indigo-600" : "text-slate-400"}
+                  class={active ? "text-indigo-600" : "text-slate-500"}
                 />
                 <span>{item.label}</span>
               </div>
@@ -105,7 +105,7 @@
 
     <!-- Sidebar Footer -->
     <div class="p-4 border-t border-slate-100 text-center">
-      <p class="text-xs text-slate-400 font-medium">Delcom Courses &copy; 2026</p>
+      <p class="text-xs text-slate-600 font-medium">Delcom Courses &copy; 2026</p>
     </div>
   </aside>
 </div>

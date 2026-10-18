@@ -134,7 +134,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
       <div class="p-5 rounded-2xl bg-white border border-slate-100 shadow-xs flex items-center justify-between">
         <div>
-          <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Total Kursus</p>
+          <p class="text-xs font-bold uppercase tracking-wider text-slate-600">Total Kursus</p>
           <p class="text-2xl font-black text-slate-800 mt-1" data-testid="total-count">{totalCount}</p>
         </div>
         <div class="w-11 h-11 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
@@ -143,7 +143,7 @@
       </div>
       <div class="p-5 rounded-2xl bg-white border border-slate-100 shadow-xs flex items-center justify-between">
         <div>
-          <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Kursus Saya</p>
+          <p class="text-xs font-bold uppercase tracking-wider text-slate-600">Kursus Saya</p>
           <p class="text-2xl font-black text-emerald-600 mt-1" data-testid="my-count">{myCount}</p>
         </div>
         <div class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
@@ -152,7 +152,7 @@
       </div>
       <div class="p-5 rounded-2xl bg-white border border-slate-100 shadow-xs flex items-center justify-between">
         <div>
-          <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Kursus Diikuti</p>
+          <p class="text-xs font-bold uppercase tracking-wider text-slate-600">Kursus Diikuti</p>
           <p class="text-2xl font-black text-amber-600 mt-1" data-testid="enrolled-count">{enrolledCount}</p>
         </div>
         <div class="w-11 h-11 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center">

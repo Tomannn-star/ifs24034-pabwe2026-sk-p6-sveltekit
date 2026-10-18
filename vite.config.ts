@@ -36,6 +36,8 @@ export default defineConfig(({ mode }) => {
       port: port,
     },
     build: {
+      target: "esnext",
+      sourcemap: true,
       chunkSizeWarningLimit: 1500,
     },
     define: {

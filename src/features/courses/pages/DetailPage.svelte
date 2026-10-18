@@ -281,7 +281,7 @@
       <div class="bg-white rounded-2xl border border-slate-100 p-6 shadow-xs space-y-4">
         <div class="flex items-center gap-2 text-slate-800">
           <MessageSquare size={18} class="text-indigo-600" />
-          <h3 class="text-base font-bold">Beri Penilaian &amp; Ulasan Kursus</h3>
+          <h2 class="text-base font-bold">Beri Penilaian &amp; Ulasan Kursus</h2>
         </div>
 
         <div class="space-y-3">
@@ -331,8 +331,8 @@
     {:else}
       <div class="p-6 rounded-2xl bg-indigo-50/50 border border-indigo-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h3 class="text-base font-bold text-slate-800">Tertarik Mengikuti Kursus Ini?</h3>
-          <p class="text-xs text-slate-500 mt-1">Daftar sekarang untuk dapat mengakses seluruh materi dan menandai progress belajar.</p>
+          <h2 class="text-base font-bold text-slate-800">Tertarik Mengikuti Kursus Ini?</h2>
+          <p class="text-xs text-slate-700 mt-1">Daftar sekarang untuk dapat mengakses seluruh materi dan menandai progress belajar.</p>
         </div>
         <button
           type="button"
@@ -351,7 +351,7 @@
       <div class="flex items-center justify-between">
         <div>
           <h2 class="text-lg font-bold text-slate-800">Materi Pembelajaran Video</h2>
-          <p class="text-xs text-slate-500">Tonton dan pelajari video materi yang telah disediakan.</p>
+          <p class="text-xs text-slate-600">Tonton dan pelajari video materi yang telah disediakan.</p>
         </div>
 
         {#if isOwner}
@@ -373,7 +373,7 @@
             <Video size={24} />
           </div>
           <p class="text-sm font-semibold text-slate-700">Belum ada materi pembelajaran</p>
-          <p class="text-xs text-slate-400 mt-1">
+          <p class="text-xs text-slate-600 mt-1">
             {#if isOwner}
               Klik tombol "Tambah Materi" untuk menambahkan video pertama Anda.
             {:else}
@@ -393,10 +393,10 @@
                 </div>
                 <div>
                   <div class="flex items-center gap-2">
-                    <span class="text-xs font-bold text-slate-400">#{index + 1}</span>
-                    <h4 class="text-sm font-bold text-slate-800 line-clamp-1">{item.title}</h4>
+                    <span class="text-xs font-bold text-slate-600">#{index + 1}</span>
+                    <h3 class="text-sm font-bold text-slate-800 line-clamp-1">{item.title}</h3>
                   </div>
-                  <p class="text-xs text-slate-400 truncate max-w-sm sm:max-w-md">{item.youtube}</p>
+                  <p class="text-xs text-slate-600 truncate max-w-sm sm:max-w-md">{item.youtube}</p>
                 </div>
               </div>
 
@@ -457,7 +457,7 @@
       </div>
 
       {#if students.length === 0}
-        <p class="text-xs text-slate-400 italic">Belum ada peserta yang mendaftar di kursus ini.</p>
+        <p class="text-xs text-slate-600 italic">Belum ada peserta yang mendaftar di kursus ini.</p>
       {:else}
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
           {#each students as student (student.id)}
@@ -471,7 +471,7 @@
               {/if}
               <div class="overflow-hidden">
                 <p class="text-xs font-bold text-slate-800 truncate">{student.name}</p>
-                <p class="text-[11px] text-slate-400 truncate">{student.email || "Peserta"}</p>
+                <p class="text-[11px] text-slate-600 truncate">{student.email || "Peserta"}</p>
               </div>
             </div>
           {/each}

@@ -140,7 +140,7 @@
       </div>
 
       {#if youtubeLink}
-        <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+        <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
           <span class="truncate max-w-sm sm:max-w-md">Sumber: <span>{youtubeLink}</span></span>
           <a
             href={youtubeLink}

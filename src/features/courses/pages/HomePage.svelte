@@ -102,7 +102,7 @@
         <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
           Daftar Kursus
         </h1>
-        <p class="text-sm text-slate-500 mt-1">
+        <p class="text-sm text-slate-600 mt-1">
           Kelola dan jelajahi kumpulan kursus dan materi pembelajaran.
         </p>
       </div>
@@ -205,8 +205,8 @@
         <div class="w-14 h-14 mx-auto rounded-2xl bg-indigo-50 text-indigo-500 flex items-center justify-center mb-3">
           <BookOpen size={28} />
         </div>
-        <h3 class="text-base font-bold text-slate-800">Belum ada Kursus</h3>
-        <p class="text-sm text-slate-500 mt-1 max-w-sm mx-auto">
+        <h2 class="text-base font-bold text-slate-800">Belum ada Kursus</h2>
+        <p class="text-sm text-slate-600 mt-1 max-w-sm mx-auto">
           Tidak ada kursus yang cocok dengan kriteria pencarian Anda.
         </p>
       </div>
@@ -238,10 +238,10 @@
 
             <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
               <div>
-                <h3 class="text-lg font-bold text-slate-900 line-clamp-1 group-hover:text-indigo-600 transition-colors">
+                <h2 class="text-lg font-bold text-slate-900 line-clamp-1 group-hover:text-indigo-600 transition-colors">
                   {course.title}
-                </h3>
-                <p class="text-xs text-slate-500 mt-1.5 line-clamp-2">
+                </h2>
+                <p class="text-xs text-slate-600 mt-1.5 line-clamp-2">
                   {course.description || "Tidak ada deskripsi."}
                 </p>
               </div>

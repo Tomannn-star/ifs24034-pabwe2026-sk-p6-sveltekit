@@ -8,6 +8,7 @@
     "dev": "vite dev",
     "build": "bun --bun vite build || vite build",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "prepare": "svelte-kit sync",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage"

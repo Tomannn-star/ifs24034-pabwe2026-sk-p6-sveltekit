@@ -246,8 +246,10 @@
           <div class="flex items-center gap-2">
             {#if course.author?.photo}
               <img
-                src={course.author.photo.replace("https://open-api.delcom.org", "")}
+                src={getOptimizedImageUrl(course.author.photo, 64)}
                 alt={course.author.name}
+                width="24"
+                height="24"
                 class="w-6 h-6 rounded-full object-cover"
                 loading="lazy"
                 decoding="async"
@@ -479,7 +481,15 @@
           {#each students as student (student.id)}
             <div class="p-3 rounded-xl bg-white border border-slate-100 shadow-xs flex items-center gap-2.5">
               {#if student.photo}
-                <img src={student.photo} alt={student.name} class="w-8 h-8 rounded-full object-cover shrink-0" />
+                <img
+                  src={getOptimizedImageUrl(student.photo, 64)}
+                  alt={student.name}
+                  width="32"
+                  height="32"
+                  class="w-8 h-8 rounded-full object-cover shrink-0"
+                  loading="lazy"
+                  decoding="async"
+                />
               {:else}
                 <div class="w-8 h-8 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center text-xs font-bold shrink-0">
                   {student.name ? student.name.charAt(0) : "P"}

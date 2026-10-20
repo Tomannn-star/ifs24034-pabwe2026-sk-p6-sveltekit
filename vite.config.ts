@@ -13,7 +13,11 @@ export default defineConfig(({ mode }) => {
 
   const isVercel = Boolean(process.env.VERCEL);
   const selectedAdapter = isVercel
-    ? adapterVercel()
+    ? adapterVercel({
+        isr: {
+          expiration: 60,
+        },
+      })
     : adapterBun({
         envPrefix: "APP_",
         serverOptions: {
@@ -43,7 +47,9 @@ export default defineConfig(({ mode }) => {
     },
     define: {
       DELCOM_BASEURL: JSON.stringify(
-        env.VITE_DELCOM_BASEURL || "https://open-api.delcom.org/api/v1"
+        isVercel
+          ? "/api/v1"
+          : (env.VITE_DELCOM_BASEURL || "https://open-api.delcom.org/api/v1")
       ),
     },
     test: {

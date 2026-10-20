@@ -207,7 +207,14 @@
     <div class="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden">
       <div class="h-48 sm:h-64 w-full bg-gradient-to-tr from-slate-900 via-indigo-950 to-indigo-900 relative flex items-center justify-center">
         {#if course.cover}
-          <img src={course.cover} alt={course.title} class="w-full h-full object-cover" />
+          <img
+            src={course.cover.replace("https://open-api.delcom.org", "")}
+            alt={course.title}
+            class="w-full h-full object-cover"
+            fetchpriority="high"
+            loading="eager"
+            decoding="async"
+          />
         {:else}
           <div class="text-white/40 flex flex-col items-center gap-2">
             <GraduationCap size={48} />
@@ -236,7 +243,13 @@
         <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-slate-500">
           <div class="flex items-center gap-2">
             {#if course.author?.photo}
-              <img src={course.author.photo} alt={course.author.name} class="w-6 h-6 rounded-full object-cover" />
+              <img
+                src={course.author.photo.replace("https://open-api.delcom.org", "")}
+                alt={course.author.name}
+                class="w-6 h-6 rounded-full object-cover"
+                loading="lazy"
+                decoding="async"
+              />
             {:else}
               <div class="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 font-bold text-[10px]">
                 {course.author?.name ? course.author.name.charAt(0) : "U"}

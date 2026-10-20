@@ -218,7 +218,7 @@
             <div class="h-40 w-full bg-gradient-to-tr from-slate-800 via-indigo-950 to-indigo-900 relative overflow-hidden flex items-center justify-center">
               {#if course.cover}
                 <img
-                  src={course.cover}
+                  src={course.cover.replace("https://open-api.delcom.org", "")}
                   alt={course.title}
                   loading="lazy"
                   decoding="async"
@@ -251,7 +251,7 @@
               <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
                 <div class="flex items-center gap-2 overflow-hidden">
                   {#if course.author?.photo}
-                    <img src={course.author.photo} alt={course.author.name} class="w-6 h-6 rounded-full object-cover shrink-0" />
+                    <img src={course.author.photo.replace("https://open-api.delcom.org", "")} alt={course.author.name} class="w-6 h-6 rounded-full object-cover shrink-0" loading="lazy" decoding="async" />
                   {:else}
                     <div class="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 text-[10px] font-bold shrink-0">
                       {course.author?.name ? course.author.name.charAt(0) : "U"}

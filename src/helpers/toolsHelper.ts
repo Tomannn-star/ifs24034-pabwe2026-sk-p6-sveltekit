@@ -74,13 +74,18 @@ export function getOptimizedImageUrl(
   width: number = 640
 ): string {
   if (!url) return "";
-  if (
-    url.includes("delcom.org") ||
-    url.startsWith("/img/") ||
-    url.startsWith("/default/")
-  ) {
-    const cleanPath = url.replace("https://open-api.delcom.org", "");
+  if (url.startsWith("/_vercel/image")) return url;
+
+  const match = url.match(/\/(img|default)\/.+/);
+  if (match) {
+    const cleanPath = match[0];
     return `/_vercel/image?url=${encodeURIComponent("https://open-api.delcom.org" + cleanPath)}&w=${width}&q=75`;
   }
+
+  if (url.includes("delcom.org")) {
+    const cleanPath = url.replace(/^https?:\/\/[^\/]+/, "");
+    return `/_vercel/image?url=${encodeURIComponent("https://open-api.delcom.org" + cleanPath)}&w=${width}&q=75`;
+  }
+
   return url;
 }

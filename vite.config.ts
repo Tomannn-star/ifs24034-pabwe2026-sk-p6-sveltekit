@@ -13,11 +13,7 @@ export default defineConfig(({ mode }) => {
 
   const isVercel = Boolean(process.env.VERCEL);
   const selectedAdapter = isVercel
-    ? adapterVercel({
-        isr: {
-          expiration: 60,
-        },
-      })
+    ? adapterVercel()
     : adapterBun({
         envPrefix: "APP_",
         serverOptions: {

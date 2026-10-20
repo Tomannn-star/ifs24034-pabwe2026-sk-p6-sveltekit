@@ -68,3 +68,15 @@ export function formatDate(date: string | number | Date | null | undefined): str
     minute: "2-digit",
   });
 }
+
+export function getOptimizedImageUrl(
+  url: string | null | undefined,
+  width: number = 640
+): string {
+  if (!url) return "";
+  if (url.includes("delcom.org")) {
+    const cleanPath = url.replace("https://open-api.delcom.org", "");
+    return `/_vercel/image?url=${encodeURIComponent("https://open-api.delcom.org" + cleanPath)}&w=${width}&q=75`;
+  }
+  return url;
+}

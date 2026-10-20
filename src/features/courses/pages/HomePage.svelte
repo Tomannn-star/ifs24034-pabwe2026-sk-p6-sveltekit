@@ -5,7 +5,7 @@
   import ChangeModal from "../modals/ChangeModal.svelte";
   import { coursesStore } from "../states/coursesStore";
   import { usersStore } from "../../users/states/usersStore";
-  import { showConfirmDialog } from "../../../helpers/toolsHelper";
+  import { showConfirmDialog, getOptimizedImageUrl } from "../../../helpers/toolsHelper";
   import {
     Plus,
     BookOpen,
@@ -218,8 +218,10 @@
             <div class="h-40 w-full bg-gradient-to-tr from-slate-800 via-indigo-950 to-indigo-900 relative overflow-hidden flex items-center justify-center">
               {#if course.cover}
                 <img
-                  src={course.cover.replace("https://open-api.delcom.org", "")}
+                  src={getOptimizedImageUrl(course.cover, 320)}
                   alt={course.title}
+                  width="320"
+                  height="160"
                   loading="lazy"
                   decoding="async"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"

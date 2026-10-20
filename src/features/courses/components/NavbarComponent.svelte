@@ -3,6 +3,7 @@
   import { goto } from "$app/navigation";
   import { GraduationCap, User, LogOut, ChevronDown, Menu, X } from "lucide-svelte";
   import type { User as UserType } from "../../users/api/userApi";
+  import { getOptimizedImageUrl } from "../../../helpers/toolsHelper";
 
   export let profile: UserType | null = null;
   export let isSidebarOpen: boolean = false;
@@ -82,8 +83,10 @@
       >
         {#if profile?.photo}
           <img
-            src={profile.photo.replace("https://open-api.delcom.org", "")}
+            src={getOptimizedImageUrl(profile.photo, 64)}
             alt={profile.name || "User Avatar"}
+            width="32"
+            height="32"
             class="w-8 h-8 rounded-full object-cover border border-slate-200"
             loading="lazy"
             decoding="async"

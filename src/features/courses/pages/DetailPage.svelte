@@ -7,7 +7,7 @@
   import ContentModal from "../modals/ContentModal.svelte";
   import { coursesStore } from "../states/coursesStore";
   import { usersStore } from "../../users/states/usersStore";
-  import { showConfirmDialog, showErrorDialog } from "../../../helpers/toolsHelper";
+  import { showConfirmDialog, showErrorDialog, getOptimizedImageUrl } from "../../../helpers/toolsHelper";
   import {
     ArrowLeft,
     ImagePlus,
@@ -208,8 +208,10 @@
       <div class="h-48 sm:h-64 w-full bg-gradient-to-tr from-slate-900 via-indigo-950 to-indigo-900 relative flex items-center justify-center">
         {#if course.cover}
           <img
-            src={course.cover.replace("https://open-api.delcom.org", "")}
+            src={getOptimizedImageUrl(course.cover, 640)}
             alt={course.title}
+            width="640"
+            height="256"
             class="w-full h-full object-cover"
             fetchpriority="high"
             loading="eager"
